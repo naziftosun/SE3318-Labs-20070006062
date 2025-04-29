@@ -21,7 +21,7 @@ public class TaskManager {
      * requires: Task is not null, user is not null.
      * effects: Adds the task to user's task list.Sends a notification about new task.
      */
-    public void assignTask(Task task, User user){
+    public void assignTaskToUser(Task task, User user){
         if (task != null && user != null){
             System.out.println("Assigning task "+ task.getTitle() + " to user" + user.getUserName());
 

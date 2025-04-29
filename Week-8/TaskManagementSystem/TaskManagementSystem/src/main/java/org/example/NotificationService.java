@@ -25,6 +25,10 @@ public class NotificationService {
      *
      */
     public void sendNotification(User user,String message){
+        if (user == null || message == null){
+            System.err.println("Cannot send notification because of null.");
+            return;
+        }
         System.out.println("Sending notification to"+user.getUserName()+ ":" + message);
 
         userNotifications.computeIfAbsent(user, k-> new ArrayList<>()).add(message);
@@ -36,7 +40,10 @@ public class NotificationService {
      * effects: Returns a list containing all messages for the user.
      */
     public List<String> getNotifications(User user){
-        return userNotifications.getOrDefault(user, new ArrayList<>());
+        if(user == null){
+            return new ArrayList<>();
+        }
+        return new ArrayList<>(userNotifications.getOrDefault(user,new ArrayList<>()));
     }
 
 }

@@ -69,6 +69,15 @@ public class User {
     }
 
     /**
+     * Returns the email address.
+     * requires: Nothing.
+     * effects: Returns the email.
+     */
+    public String getEmail(){
+        return email;
+    }
+
+    /**
      * Compares this user and object.If the argument is not null and User object has
      *  same username, the result is tru.
      *  requires: Nothing.
@@ -80,5 +89,14 @@ public class User {
         User user = (User) o;
 
         return Objects.equals(userName,user.userName);
+    }
+
+    /**
+     * Returns hash code.
+     * requires: Nothing.
+     * effects: Returns value whit equals method.
+     */
+    public int hashCode(){
+        return Objects.hash(userName);
     }
 }

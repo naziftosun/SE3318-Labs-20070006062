@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Project {
     private  String projectName;
@@ -46,7 +47,7 @@ public class Project {
      * requires: Title is not null.
      * effects: Returns the first task found in the task list.
      */
-    public Task getTask(String title){
+    public Task getTaskByTitle(String title){
         for (Task task : tasks){
             if (task.getTitle().equalsIgnoreCase(title)){
                 return task;
@@ -82,6 +83,25 @@ public class Project {
         return new ArrayList<>(tasks);
     }
 
+    /**
+     * Compares project with object.
+     * requires: Nothing.
+     * effects: Returns true if objects are equal.
+     */
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Project project = (Project) o;
+        return Objects.equals(projectName,project.projectName);
+    }
 
+    /**
+     * Returns hash code value.
+     * requires: Nothing.
+     * effects: Returns value with equals method.
+     */
+    public int hashCode() {
+        return Objects.hash(projectName);
+    }
 
 }

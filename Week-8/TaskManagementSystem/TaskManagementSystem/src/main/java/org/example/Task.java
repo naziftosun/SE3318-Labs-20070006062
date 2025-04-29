@@ -1,6 +1,7 @@
 package org.example;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Task {
     private String title;
@@ -37,7 +38,7 @@ public class Task {
      * requires: Nothing.
      * effects: Sets completion to true.
      */
-    public  void Completed(){
+    public  void markedAsCompleted(){
         this.completed = true;
     }
 
@@ -74,6 +75,15 @@ public class Task {
         }
         Task task = (Task) o;
         return java.util.Objects.equals(title, task.title) && java.util.Objects.equals(dueDate, task.dueDate);
+    }
+
+    /**
+     * Returns a value for task, based on title and date.
+     * requires: Nothing.
+     * effects: Returns a hash code value.
+     */
+    public int hashCode(){
+        return Objects.hash(title, dueDate);
     }
 
 

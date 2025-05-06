@@ -11,7 +11,7 @@ public class Duel {
      */
     public static void start(HogwartsStudent s1,HogwartsStudent s2,String spell){
         if (s1 == null || s2 == null || spell == null || spell.trim().isEmpty()) {
-            System.out.println("Invalid duel.Students and spell cannot be null or empty.");
+            System.out.println("Invalid duel setup.Students and spell cannot be null or empty.");
             return;
         }
 
@@ -24,7 +24,7 @@ public class Duel {
         boolean s2Knows = s2.knowsSpell(spell);
 
         if (s1Knows && s2Knows){
-            System.out.println("Result:Both students knows.");
+            System.out.println("Result:Both students know the spell.");
         } else if (s1Knows) {
             System.out.println("Result:"+ s1.getName() + "knows the spell and wins.");
 

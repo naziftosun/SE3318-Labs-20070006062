@@ -1,0 +1,14 @@
+<!--
+  The root element "module" defines the basic structure of a Checkstyle configuration.
+  It can contain nested modules and properties.
+-->
+<!ELEMENT module (module|property)*>
+<!ATTLIST module name CDATA #REQUIRED>
+
+<!--
+  The "property" element is used to configure modules with name-value pairs.
+-->
+<!ELEMENT property EMPTY>
+<!ATTLIST property
+  name CDATA #REQUIRED
+  value CDATA #REQUIRED> 

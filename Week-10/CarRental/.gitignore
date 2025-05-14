@@ -1,0 +1,35 @@
+# Maven
+target/
+*.jar
+*.war
+*.ear
+*.class
+
+# Checkstyle
+checkstyle-cachefile
+checkstyle-checker.xml
+checkstyle-result.xml
+
+# IDE files
+.idea/
+*.iml
+.settings/
+.project
+.classpath
+
+# Compiled files
+bin/
+build/
+out/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db 
